@@ -1,6 +1,6 @@
 package com.rubencarmona.inditex.domain.service;
 
-import com.rubencarmona.inditex.domain.model.exception.RateNotFound;
+import com.rubencarmona.inditex.domain.exception.RateNotFound;
 import com.rubencarmona.inditex.domain.port.out.RateRepositoryPort;
 import com.rubencarmona.inditex.mock.RateMockRepository;
 import org.junit.jupiter.api.BeforeEach;

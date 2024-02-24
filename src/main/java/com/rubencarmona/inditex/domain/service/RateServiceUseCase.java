@@ -1,14 +1,17 @@
 package com.rubencarmona.inditex.domain.service;
 
+import com.rubencarmona.inditex.domain.exception.RateNotFound;
 import com.rubencarmona.inditex.domain.model.Rate;
-import com.rubencarmona.inditex.domain.model.exception.RateNotFound;
-import com.rubencarmona.inditex.domain.model.port.in.RateServicePort;
+import com.rubencarmona.inditex.domain.port.in.RateServicePort;
 import com.rubencarmona.inditex.domain.port.out.RateRepositoryPort;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 
+/**
+ * The type Rate service use case.
+ */
 @Service
 @RequiredArgsConstructor
 public class RateServiceUseCase implements RateServicePort {

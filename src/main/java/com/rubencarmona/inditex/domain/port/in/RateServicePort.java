@@ -1,6 +1,7 @@
-package com.rubencarmona.inditex.domain.model.port.in;
+package com.rubencarmona.inditex.domain.port.in;
 
 import com.rubencarmona.inditex.domain.model.Rate;
+
 import java.time.LocalDateTime;
 
 /**

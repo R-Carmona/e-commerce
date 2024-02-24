@@ -1,6 +1,14 @@
-package com.rubencarmona.inditex.domain.model.exception;
+package com.rubencarmona.inditex.domain.exception;
 
-public class RateNotFound extends RuntimeException{
+/**
+ * The type Rate not found.
+ */
+public class RateNotFound extends RuntimeException {
+    /**
+     * Instantiates a new Rate not found.
+     *
+     * @param msg the msg
+     */
     public RateNotFound(String msg) {
         super(msg);
     }
