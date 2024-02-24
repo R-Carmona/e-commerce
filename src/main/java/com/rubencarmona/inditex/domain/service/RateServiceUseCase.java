@@ -19,8 +19,8 @@ public class RateServiceUseCase implements RateServicePort {
     private final RateRepositoryPort rateRepositoryPort;
 
     @Override
-    public Rate findByBrandProductBetweenDate(Long brandId, Long productId, LocalDateTime dateBetween) {
-        var rate = rateRepositoryPort.findByBrandProductBetweenDate(brandId, productId, dateBetween);
+    public Rate findByBrandProductBetweenDate(Long brandId, Long productId, LocalDateTime applicationDate) {
+        var rate = rateRepositoryPort.findByBrandProductBetweenDate(brandId, productId, applicationDate);
 
         if (rate == null) {
             throw new RateNotFound("Price not found");

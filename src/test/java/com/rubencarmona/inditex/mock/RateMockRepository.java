@@ -1,6 +1,7 @@
 package com.rubencarmona.inditex.mock;
 
 import com.rubencarmona.inditex.domain.model.Rate;
+import com.rubencarmona.inditex.infrastructure.model.RateMO;
 
 import java.time.Instant;
 import java.time.LocalDateTime;
@@ -43,6 +44,25 @@ public class RateMockRepository {
                 .endDate(createDate())
                 .priceList(0L)
                 .productId(0L)
+                .price(0.0)
+                .build();
+    }
+
+    /**
+     * Create rate mo rate mo.
+     *
+     * @return the rate mo
+     */
+    public RateMO createRateMO() {
+        return RateMO.builder()
+                .id(0L)
+                .brandId(0L)
+                .startDate(createLocalDateTime())
+                .endDate(createLocalDateTime())
+                .priceList(0)
+                .productId(0L)
+                .priority(0)
+                .curr("EUR")
                 .price(0.0)
                 .build();
     }

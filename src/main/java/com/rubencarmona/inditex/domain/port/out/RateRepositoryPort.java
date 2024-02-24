@@ -11,10 +11,10 @@ public interface RateRepositoryPort {
     /**
      * Find by brand product between date rate.
      *
-     * @param brandId     the brand id
-     * @param productId   the product id
-     * @param dateBetween the date between
+     * @param brandId         the brand id
+     * @param productId       the product id
+     * @param applicationDate the date between
      * @return the rate
      */
-    Rate findByBrandProductBetweenDate(Long brandId, Long productId, LocalDateTime dateBetween);
+    Rate findByBrandProductBetweenDate(Long brandId, Long productId, LocalDateTime applicationDate);
 }
