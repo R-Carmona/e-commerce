@@ -1,4 +1,4 @@
-package com.rubencarmona.inditex.exception;
+package com.rubencarmona.inditex.domain.model.exception;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;

@@ -1,4 +1,4 @@
-package com.rubencarmona.inditex.domain;
+package com.rubencarmona.inditex.domain.model;
 
 import lombok.Builder;
 import lombok.Data;
