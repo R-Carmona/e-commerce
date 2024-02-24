@@ -38,7 +38,7 @@ class RateServiceUseCaseTest {
     }
 
     @Test
-    @DisplayName("Should find product")
+    @DisplayName("Should find product model is Null")
     void testFindByBrandProductBetweenDateIsNull() {
         // Setup
         var date = LocalDateTime.ofInstant(rateMockRepository.createDate(), ZoneId.systemDefault());
@@ -51,7 +51,7 @@ class RateServiceUseCaseTest {
     }
 
     @Test
-    @DisplayName("Should find product")
+    @DisplayName("Should find product model is ok")
     void testFindByBrandProductBetweenDate() {
         // Setup
         var date = LocalDateTime.ofInstant(rateMockRepository.createDate(), ZoneId.systemDefault());

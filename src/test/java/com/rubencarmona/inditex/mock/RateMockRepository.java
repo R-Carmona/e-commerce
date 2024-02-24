@@ -4,13 +4,37 @@ import com.rubencarmona.inditex.domain.model.Rate;
 
 import java.time.Instant;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.ZoneOffset;
 
+/**
+ * The type Rate mock repository.
+ */
 public class RateMockRepository {
+
+    /**
+     * Create date instant.
+     *
+     * @return the instant
+     */
     public Instant createDate() {
         return LocalDateTime.of(2024, 1, 1, 0, 0, 0, 0).toInstant(ZoneOffset.UTC);
     }
 
+    /**
+     * Create local date time local date time.
+     *
+     * @return the local date time
+     */
+    public LocalDateTime createLocalDateTime() {
+        return LocalDateTime.ofInstant(createDate(), ZoneId.of("UTC"));
+    }
+
+    /**
+     * Create rate rate.
+     *
+     * @return the rate
+     */
     public Rate createRate() {
         return Rate.builder()
                 .brandId(0L)
