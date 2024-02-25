@@ -10,13 +10,30 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 
+/**
+ * The type Rate repository adapter.
+ */
 @Service
 @RequiredArgsConstructor
 public class RateRepositoryAdapter implements RateRepositoryPort {
 
+    /**
+     * The Rate repository.
+     */
     private final RateRepository rateRepository;
+    /**
+     * The Rate repository adapter mapper.
+     */
     private final RateRepositoryAdapterMapper rateRepositoryAdapterMapper;
 
+    /**
+     * Find by brand product between date rate.
+     *
+     * @param brandId         the brand id
+     * @param productId       the product id
+     * @param applicationDate the application date
+     * @return the rate
+     */
     @Override
     public Rate findByBrandProductBetweenDate(Long brandId, Long productId, LocalDateTime applicationDate) {
         var priceMOS = rateRepository.findAllByBrandIdAndProductIdBetweenDates(brandId, productId, applicationDate);

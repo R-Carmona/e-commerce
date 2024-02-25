@@ -15,10 +15,19 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class ApiError {
 
+    /**
+     * The Status.
+     */
     private Object status;
 
+    /**
+     * The Date.
+     */
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy hh:mm:ss")
     private LocalDateTime date;
 
+    /**
+     * The Message.
+     */
     private String message;
 }

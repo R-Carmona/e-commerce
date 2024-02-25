@@ -19,7 +19,7 @@ public interface RateRepositoryAdapterMapper {
      * @param rateMO the price mo
      * @return the rate
      */
-    public abstract Rate toDomain(RateMO rateMO);
+    Rate toDomain(RateMO rateMO);
 
     /**
      * Map string.

@@ -15,18 +15,38 @@ import org.springframework.web.bind.annotation.RestController;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * The type Rate service use case ext.
+ */
 @RestController
 @Api(tags = {"Api Prices"})
 @RequestMapping("/api")
 public class RateServiceUseCaseExt extends RateServiceUseCase {
 
+    /**
+     * The Rate service use case mapper.
+     */
     private final RateServiceUseCaseMapper rateServiceUseCaseMapper;
 
+    /**
+     * Instantiates a new Rate service use case ext.
+     *
+     * @param rateRepositoryPort       the rate repository port
+     * @param rateServiceUseCaseMapper the rate service use case mapper
+     */
     public RateServiceUseCaseExt(RateRepositoryPort rateRepositoryPort, RateServiceUseCaseMapper rateServiceUseCaseMapper) {
         super(rateRepositoryPort);
         this.rateServiceUseCaseMapper = rateServiceUseCaseMapper;
     }
 
+    /**
+     * Gets rate.
+     *
+     * @param applicationDate the application date
+     * @param productId       the product id
+     * @param brandId         the brand id
+     * @return the rate
+     */
     @ApiOperation(
             value = "Return a price to apply on a given date.",
             nickname = "Return a price to apply on a given date.",

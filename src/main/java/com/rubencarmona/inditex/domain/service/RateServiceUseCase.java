@@ -16,8 +16,19 @@ import java.time.LocalDateTime;
 @RequiredArgsConstructor
 public class RateServiceUseCase implements RateServicePort {
 
+    /**
+     * The Rate repository port.
+     */
     private final RateRepositoryPort rateRepositoryPort;
 
+    /**
+     * Find by brand product between date rate.
+     *
+     * @param brandId         the brand id
+     * @param productId       the product id
+     * @param applicationDate the application date
+     * @return the rate
+     */
     @Override
     public Rate findByBrandProductBetweenDate(Long brandId, Long productId, LocalDateTime applicationDate) {
         var rate = rateRepositoryPort.findByBrandProductBetweenDate(brandId, productId, applicationDate);
