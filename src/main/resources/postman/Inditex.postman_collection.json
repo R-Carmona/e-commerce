@@ -1,0 +1,514 @@
+{
+	"info": {
+		"_postman_id": "0d2cd150-9aa6-4825-8123-920bc3da7bd3",
+		"name": "Inditex",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16748264"
+	},
+	"item": [
+		{
+			"name": "TEST 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Response status code is 200', function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							"pm.test('Price is a non-negative number', function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"    pm.expect(responseData).to.be.an('object');\r",
+							"    pm.expect(responseData.price).to.be.a('number').and.to.be.at.least(0);\r",
+							"})\r",
+							"\r",
+							"pm.test('Verify that the productId is a non-negative integer', function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"    pm.expect(responseData).to.be.an('object');\r",
+							"    pm.expect(responseData.productId).to.be.a('number');\r",
+							"    pm.expect(responseData.productId).to.be.at.least(0, 'productId should be a non-negative integer');\r",
+							"})\r",
+							"\r",
+							"pm.test('Verify that brandId is a non-negative integer', function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"    pm.expect(responseData).to.be.an('object');\r",
+							"    pm.expect(responseData.brandId).to.exist.and.to.be.a('number');\r",
+							"    pm.expect(responseData.brandId).to.be.at.least(0);\r",
+							"})\r",
+							"\r",
+							"pm.test('Verify that priceList is a non-negative integer', function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"    pm.expect(responseData.priceList).to.be.a('number');\r",
+							"    pm.expect(responseData.priceList).to.be.at.least(0);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Start date is in a valid date format\", function () {\r",
+							"    var startDate = pm.response.json().startDate;\r",
+							"    var dateFormat = /^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$/;\r",
+							"    pm.expect(startDate).to.match(dateFormat);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"EndDate date is in a valid date format\", function () {\r",
+							"    var endDate = pm.response.json().endDate;\r",
+							"    var dateFormat = /^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$/;\r",
+							"    pm.expect(endDate).to.match(dateFormat);\r",
+							"});\r",
+							"\r",
+							"pm.test('Price OK', function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"    pm.expect(responseData.price).to.eql(35.5);\r",
+							"})\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/price?applicationDate=2020-06-14T10:00:00.00Z&productId=35455&brandId=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"price"
+					],
+					"query": [
+						{
+							"key": "applicationDate",
+							"value": "2020-06-14T10:00:00.00Z"
+						},
+						{
+							"key": "productId",
+							"value": "35455"
+						},
+						{
+							"key": "brandId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TEST 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Response status code is 200', function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							"pm.test('Price is a non-negative number', function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"    pm.expect(responseData).to.be.an('object');\r",
+							"    pm.expect(responseData.price).to.be.a('number').and.to.be.at.least(0);\r",
+							"})\r",
+							"\r",
+							"pm.test('Verify that the productId is a non-negative integer', function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"    pm.expect(responseData).to.be.an('object');\r",
+							"    pm.expect(responseData.productId).to.be.a('number');\r",
+							"    pm.expect(responseData.productId).to.be.at.least(0, 'productId should be a non-negative integer');\r",
+							"})\r",
+							"\r",
+							"pm.test('Verify that brandId is a non-negative integer', function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"    pm.expect(responseData).to.be.an('object');\r",
+							"    pm.expect(responseData.brandId).to.exist.and.to.be.a('number');\r",
+							"    pm.expect(responseData.brandId).to.be.at.least(0);\r",
+							"})\r",
+							"\r",
+							"pm.test('Verify that priceList is a non-negative integer', function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"    pm.expect(responseData.priceList).to.be.a('number');\r",
+							"    pm.expect(responseData.priceList).to.be.at.least(0);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Start date is in a valid date format\", function () {\r",
+							"    var startDate = pm.response.json().startDate;\r",
+							"    var dateFormat = /^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$/;\r",
+							"    pm.expect(startDate).to.match(dateFormat);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"EndDate date is in a valid date format\", function () {\r",
+							"    var endDate = pm.response.json().endDate;\r",
+							"    var dateFormat = /^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$/;\r",
+							"    pm.expect(endDate).to.match(dateFormat);\r",
+							"});\r",
+							"\r",
+							"pm.test('Price OK', function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"    pm.expect(responseData.price).to.eql(25.45);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/price?applicationDate=2020-06-14T16:00:00.00Z&productId=35455&brandId=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"price"
+					],
+					"query": [
+						{
+							"key": "applicationDate",
+							"value": "2020-06-14T16:00:00.00Z"
+						},
+						{
+							"key": "productId",
+							"value": "35455"
+						},
+						{
+							"key": "brandId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TEST 3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Response status code is 200', function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							"pm.test('Price is a non-negative number', function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"    pm.expect(responseData).to.be.an('object');\r",
+							"    pm.expect(responseData.price).to.be.a('number').and.to.be.at.least(0);\r",
+							"})\r",
+							"\r",
+							"pm.test('Verify that the productId is a non-negative integer', function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"    pm.expect(responseData).to.be.an('object');\r",
+							"    pm.expect(responseData.productId).to.be.a('number');\r",
+							"    pm.expect(responseData.productId).to.be.at.least(0, 'productId should be a non-negative integer');\r",
+							"})\r",
+							"\r",
+							"pm.test('Verify that brandId is a non-negative integer', function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"    pm.expect(responseData).to.be.an('object');\r",
+							"    pm.expect(responseData.brandId).to.exist.and.to.be.a('number');\r",
+							"    pm.expect(responseData.brandId).to.be.at.least(0);\r",
+							"})\r",
+							"\r",
+							"pm.test('Verify that priceList is a non-negative integer', function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"    pm.expect(responseData.priceList).to.be.a('number');\r",
+							"    pm.expect(responseData.priceList).to.be.at.least(0);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Start date is in a valid date format\", function () {\r",
+							"    var startDate = pm.response.json().startDate;\r",
+							"    var dateFormat = /^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$/;\r",
+							"    pm.expect(startDate).to.match(dateFormat);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"EndDate date is in a valid date format\", function () {\r",
+							"    var endDate = pm.response.json().endDate;\r",
+							"    var dateFormat = /^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$/;\r",
+							"    pm.expect(endDate).to.match(dateFormat);\r",
+							"});\r",
+							"\r",
+							"pm.test('Price OK', function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"    pm.expect(responseData.price).to.eql(35.5);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/price?applicationDate=2020-06-14T21:00:00.00Z&productId=35455&brandId=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"price"
+					],
+					"query": [
+						{
+							"key": "applicationDate",
+							"value": "2020-06-14T21:00:00.00Z"
+						},
+						{
+							"key": "productId",
+							"value": "35455"
+						},
+						{
+							"key": "brandId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TEST 4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Response status code is 200', function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							"pm.test('Price is a non-negative number', function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"    pm.expect(responseData).to.be.an('object');\r",
+							"    pm.expect(responseData.price).to.be.a('number').and.to.be.at.least(0);\r",
+							"})\r",
+							"\r",
+							"pm.test('Verify that the productId is a non-negative integer', function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"    pm.expect(responseData).to.be.an('object');\r",
+							"    pm.expect(responseData.productId).to.be.a('number');\r",
+							"    pm.expect(responseData.productId).to.be.at.least(0, 'productId should be a non-negative integer');\r",
+							"})\r",
+							"\r",
+							"pm.test('Verify that brandId is a non-negative integer', function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"    pm.expect(responseData).to.be.an('object');\r",
+							"    pm.expect(responseData.brandId).to.exist.and.to.be.a('number');\r",
+							"    pm.expect(responseData.brandId).to.be.at.least(0);\r",
+							"})\r",
+							"\r",
+							"pm.test('Verify that priceList is a non-negative integer', function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"    pm.expect(responseData.priceList).to.be.a('number');\r",
+							"    pm.expect(responseData.priceList).to.be.at.least(0);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Start date is in a valid date format\", function () {\r",
+							"    var startDate = pm.response.json().startDate;\r",
+							"    var dateFormat = /^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$/;\r",
+							"    pm.expect(startDate).to.match(dateFormat);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"EndDate date is in a valid date format\", function () {\r",
+							"    var endDate = pm.response.json().endDate;\r",
+							"    var dateFormat = /^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$/;\r",
+							"    pm.expect(endDate).to.match(dateFormat);\r",
+							"});\r",
+							"\r",
+							"pm.test('Price OK', function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"    pm.expect(responseData.price).to.eql(30.5);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/price?applicationDate=2020-06-15T10:00:00.00Z&productId=35455&brandId=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"price"
+					],
+					"query": [
+						{
+							"key": "applicationDate",
+							"value": "2020-06-15T10:00:00.00Z"
+						},
+						{
+							"key": "productId",
+							"value": "35455"
+						},
+						{
+							"key": "brandId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TEST 5",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Response status code is 200', function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							"pm.test('Price is a non-negative number', function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"    pm.expect(responseData).to.be.an('object');\r",
+							"    pm.expect(responseData.price).to.be.a('number').and.to.be.at.least(0);\r",
+							"})\r",
+							"\r",
+							"pm.test('Verify that the productId is a non-negative integer', function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"    pm.expect(responseData).to.be.an('object');\r",
+							"    pm.expect(responseData.productId).to.be.a('number');\r",
+							"    pm.expect(responseData.productId).to.be.at.least(0, 'productId should be a non-negative integer');\r",
+							"})\r",
+							"\r",
+							"pm.test('Verify that brandId is a non-negative integer', function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"    pm.expect(responseData).to.be.an('object');\r",
+							"    pm.expect(responseData.brandId).to.exist.and.to.be.a('number');\r",
+							"    pm.expect(responseData.brandId).to.be.at.least(0);\r",
+							"})\r",
+							"\r",
+							"pm.test('Verify that priceList is a non-negative integer', function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"    pm.expect(responseData.priceList).to.be.a('number');\r",
+							"    pm.expect(responseData.priceList).to.be.at.least(0);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Start date is in a valid date format\", function () {\r",
+							"    var startDate = pm.response.json().startDate;\r",
+							"    var dateFormat = /^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$/;\r",
+							"    pm.expect(startDate).to.match(dateFormat);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"EndDate date is in a valid date format\", function () {\r",
+							"    var endDate = pm.response.json().endDate;\r",
+							"    var dateFormat = /^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$/;\r",
+							"    pm.expect(endDate).to.match(dateFormat);\r",
+							"});\r",
+							"pm.test('Price OK', function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"    pm.expect(responseData.price).to.eql(38.95);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/price?applicationDate=2020-06-16T21:00:00.00Z&productId=35455&brandId=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"price"
+					],
+					"query": [
+						{
+							"key": "applicationDate",
+							"value": "2020-06-16T21:00:00.00Z"
+						},
+						{
+							"key": "productId",
+							"value": "35455"
+						},
+						{
+							"key": "brandId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "404",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Response status code is 404', function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"})\r",
+							"\r",
+							"pm.test('Status OK', function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"    pm.expect(responseData.status).to.eql(\"NOT_FOUND\");\r",
+							"})\r",
+							"\r",
+							"pm.test('message OK', function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"    pm.expect(responseData.message).to.eql(\"Price Not Found\");\r",
+							"})\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/price?applicationDate=2023-06-16T21:00:00.00Z&productId=35455&brandId=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"price"
+					],
+					"query": [
+						{
+							"key": "applicationDate",
+							"value": "2023-06-16T21:00:00.00Z"
+						},
+						{
+							"key": "productId",
+							"value": "35455"
+						},
+						{
+							"key": "brandId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
