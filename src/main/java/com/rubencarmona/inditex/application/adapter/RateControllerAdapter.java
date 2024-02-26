@@ -21,7 +21,7 @@ import java.time.format.DateTimeFormatter;
 @RestController
 @Api(tags = {"Api Prices"})
 @RequestMapping("/api")
-public class RateServiceUseCaseExt extends RateServiceUseCase {
+public class RateControllerAdapter extends RateServiceUseCase {
 
     /**
      * The Rate service use case mapper.
@@ -34,7 +34,7 @@ public class RateServiceUseCaseExt extends RateServiceUseCase {
      * @param rateRepositoryPort       the rate repository port
      * @param rateServiceUseCaseMapper the rate service use case mapper
      */
-    public RateServiceUseCaseExt(RateRepositoryPort rateRepositoryPort, RateServiceUseCaseMapper rateServiceUseCaseMapper) {
+    public RateControllerAdapter(RateRepositoryPort rateRepositoryPort, RateServiceUseCaseMapper rateServiceUseCaseMapper) {
         super(rateRepositoryPort);
         this.rateServiceUseCaseMapper = rateServiceUseCaseMapper;
     }
