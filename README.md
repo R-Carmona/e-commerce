@@ -1,10 +1,25 @@
-# Microservice-Inditex-Rate
+# Microservice E-Commerce
 
 Autor:
 
 - Rubén Carmona García
   Fecha: 2024-02-25
 - https://www.linkedin.com/in/rubencarmona/
+
+## Índice
+
+* [Introducción](#Introducción)
+* [Inicio de la aplicación en Intellij IDEA](#Inicio-de-la-aplicación-en-Intellij-IDEA)
+* [Esquema de las clases y los paquetes](#Esquema-de-las-clases-y-los-paquetes)
+* [Esquema de carpetas](#Esquema-de-carpetas)
+* [Tecnologías usadas](#Tecnologías-usadas)
+* [Carpeta Resources](#Carpeta-Resources)
+* [Swagger](#Swagger)
+* [Error 404 Personalizado](#Error-404-Personalizado)
+* [Campos de la Llamada](#Campos-de-la-Llamada)
+* [Objeto de Respuesta](#Objeto-de-Respuesta)
+* [Utilidades](#Utilidades)
+* [Comandos de maven útiles](#Comandos-de-maven-útiles)
 
 ## Introducción
 
@@ -77,6 +92,33 @@ Usando un GlobalControllerAdvice en la capa de aplicación.
 ## Objeto de Respuesta
 
 ![Obejeto de Respuesta](img/04swagger.png)
+
+## Inicio de la aplicación en Intellij IDEA
+
+Abrá IntelliJ IDEA y haga clic en “Open or Import” para importar el proyecto desde GitHub.
+
+https://github.com/R-Carmona/e-commerce.git
+
+Selecciona la opción “Open as Project” y seleccione el directorio raíz del proyecto.
+
+Una vez que se haya cargado el proyecto, vaya a la pestaña “Maven Projects” en el lado derecho de la pantalla.
+
+Expanda el proyecto y haga clic derecho en la carpeta “Lifecycle”.
+
+Elija “install” de la lista de opciones. Esto creará una carpeta “target” que contiene el código construido.
+
+Una vez que la construcción esté completa, vaya al menú “Run” y elija “Edit Configurations”.
+
+En el menú izquierdo, elija “Maven”.
+
+En el campo “Command line”, ingrese “spring-boot:run” – esto iniciará la aplicación Spring Boot.
+
+Haga clic en “OK” para guardar la configuración.
+
+Haz clic en “Run” para iniciar la aplicación.
+
+Más información:
+https://www.jetbrains.com/help/idea/run-debug-configuration-spring-boot.html
 
 ## Utilidades
 
